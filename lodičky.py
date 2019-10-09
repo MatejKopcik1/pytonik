@@ -34,19 +34,30 @@ ostrov(1200,400,"red")
 ##canvas.create_oval(1100,450-y,1200,450-y-z,fill=f,outline=f)
 
 
-def mesiacik(x,y,r,f):
-    canvas.create_oval(x,y,x+r,y+r,fill=f,outline="green")
-    canvas.create_oval(x+r/2,y,x+r,y+r,fill="green",outline="green")
+def mesiacik(x,y,r,f,h,m):
+    canvas.create_oval(x,y,x+r,y+r,fill=f,outline=h)
+    canvas.create_oval(x-m+r*0.5,y,x-m+r*1.5,y+r,fill=h,outline=h)
 
-mesiacik(205,265,50,"red")
+mesiacik(205,265,50,"red","green",0)
 
+mesiacik(1420,275,30,"blue","red",0)
+mesiacik(1380,275,30,"blue","red",30)
 
+def lodka(x,y,c):
+    canvas.create_polygon(x,y,x+c*0.5,y+0.5*c,x+c*1.5,y+c*0.5,x+2*c,y,fill="green",outline="black")
+    canvas.create_rectangle(x+c*0.95,y,x+c*1.05,y-1.8*c,fill="brown",outline="black")
+    canvas.create_polygon(x+c,y-1.8*c,x+1.5*c,y-0.5*c,x+c,y-0.3*c,fill="white",outline="black")
+    mesiacik(x+1.1*c,y+0.1*c,c*0.3,"blue","green",0)
+    mesiacik(x+0.6*c,y+0.1*c,c*0.3,"blue","green",(c*0.3))
+x=random.randint(550,700)
+y=425
+z=100
 
-
-
-
-
-
+for i in range(1,4):    
+    lodka(x,y,z)
+    x-=200
+    y+=150
+    z+=100
 
 
 
