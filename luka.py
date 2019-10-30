@@ -7,14 +7,12 @@ def strom(x,y,z):
     canvas.create_rectangle(x,y,x+16,y-200,fill="brown")
     canvas.create_oval(x+9-z,y-200-z,x+9+z,y-200+z,fill="green")
 
-x=random.randint(50,1500)
-y=random.randint(150,450)
-z=random.randrange(35,100)
 for i in range(1,11):
-    strom(x,y,z)
     x=random.randint(50,1500)
     y=random.randint(150,600)
     z=random.randrange(35,100)
+    strom(x,y,z)
+    
 
 def trava(x,y):
     h=random.randrange(3,20)
@@ -28,7 +26,7 @@ def trava(x,y):
 
 
 
-for i in range(1,20):
+for i in range(1,21):
     
     x=random.randint(20,1600)
     y=random.randint(60,900)
