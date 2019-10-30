@@ -53,7 +53,7 @@ x=random.randint(550,700)
 y=425
 z=100
 
-for i in range(1,4):    
+for _ in range(1,4):    
     lodka(x,y,z)
     x-=200
     y+=150
