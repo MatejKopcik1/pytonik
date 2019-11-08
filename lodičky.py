@@ -41,11 +41,15 @@ def lodka(x,y,c):
 x_x=random.randint(550,700)
 v_v=random.randrange(100,350)
 y_y=plocha_v/2+25
+b = (plocha_v/2)-(-150)
+n = (plocha_v/2)-150
 
-for _ in range(10):
+for _ in range(40):
+    
     x = x_x
     v = v_v
     y = y_y
+    
     canvas.delete("all")
     
     canvas.create_rectangle(0,(plocha_v)/2,plocha_s,plocha_v,fill="blue")
@@ -63,7 +67,6 @@ for _ in range(10):
     mesiac(1380,275,30,"blue","red",(-30),30)
     
     
-
     for i in range(1,4):
     
         lodka(x,y,z)
@@ -73,18 +76,12 @@ for _ in range(10):
         z+=100
 
     z=plocha_s/16  
-    b = (plocha_v/2)-(-v)
-    mesiac((plocha_s/16*10),b,100,"yellow","blue",z,0)
-    b-=50
-    n = (plocha_v/2)-v
-    mesiac((plocha_s/16*10),n,100,"yellow","white",-z,0)
-    n+=50  
+    
+    mesiac((plocha_s/16*10),b+50,100,"yellow","blue",z,0)
+    b+=5
+    
+    mesiac((plocha_s/16*10),n-50,100,"yellow","white",-z,0)
+    n-=5
+    
     canvas.update()
-    canvas.after(100)
-    
-    
-
-
-
-
-
+    canvas.after(50)
