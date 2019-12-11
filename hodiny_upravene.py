@@ -11,9 +11,11 @@ while True:
     def sekundova(x,y,s,m,h,r):
         for j in range(43200):
             c.delete("all")
-            c.create_oval(1,1,799,799,fill="white")
+            c.create_oval(0,0,800,800,fill="white")
             
             u=j * 2*(math.pi)/s - (math.pi)/2
+            
+            
             a=x + math.cos(u) * r
             b=y + math.sin(u) * r
             c.create_line(x,y,a,b,fill="black",width=1)
@@ -38,4 +40,3 @@ while True:
 
 
     sekundova(x,y,60,3600,43200,350)
-    
