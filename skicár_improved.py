@@ -69,11 +69,12 @@ def press(event):
     elif sirka-6*r < xpress < sirka-5*r and vyska-r < ypress < vyska:
         farba="white"
     elif sirka-r < xpress < sirka and 5 < ypress < r+5:
-        farba = "white"
+        farba = farba_pozadia
         hrubka = 20
 
     if 5 < xpress < r+5 and 5 < ypress < r+5:
         c.create_rectangle(r+10,r+10,sirka-r-10,vyska-r-10,fill=farba)
+        farba_pozadia = farba
 
     if 5 < xpress < r+5 and vyska - r < ypress < vyska:
         hrubka = 15
