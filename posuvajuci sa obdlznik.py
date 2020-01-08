@@ -16,7 +16,7 @@ k = 10
 while True:
     
     f = c.create_rectangle(x-r, y-r, x+r, y+r, fill="red")
-    c.create_text(x,y,text=".",fill="white")
+    
     x= x + g
     y= y+k
 
