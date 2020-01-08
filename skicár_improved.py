@@ -49,6 +49,7 @@ def press(event):
     global xpress, ypress
     global k
     global farba
+    global farba_pozadia
     global hrubka
     
     xpress = event.x
@@ -56,6 +57,10 @@ def press(event):
     
     k = True
     
+    if 5 < xpress < r+5 and 5 < ypress < r+5:
+        c.create_rectangle(r+10,r+10,sirka-r-10,vyska-r-10,fill=farba)
+        farba_pozadia = farba
+        
     if sirka-4*r < xpress < sirka-3*r and vyska - r < ypress < vyska:
         farba="yellow"
     elif sirka-3*r < xpress < sirka-2*r and vyska - r < ypress < vyska:
@@ -72,9 +77,7 @@ def press(event):
         farba = farba_pozadia
         hrubka = 20
 
-    if 5 < xpress < r+5 and 5 < ypress < r+5:
-        c.create_rectangle(r+10,r+10,sirka-r-10,vyska-r-10,fill=farba)
-        farba_pozadia = farba
+    
 
     if 5 < xpress < r+5 and vyska - r < ypress < vyska:
         hrubka = 15
@@ -137,6 +140,5 @@ def motion(event):
 c.bind("<ButtonPress>", press)
 c.bind("<ButtonRelease>", release)
 c.bind("<Motion>", motion)
-
 
 
